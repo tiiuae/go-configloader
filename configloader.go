@@ -157,7 +157,7 @@ func (s fieldSet) parse(prefix prefixes, struc reflect.Value, fieldI int) {
 		o.flagName = flagName
 	}
 	if o.flagName == "" {
-		o.flagName = convertFieldName(o.name, '-', true, unicode.ToUpper)
+		o.flagName = convertFieldName(o.name, '-', true, unicode.ToLower)
 	}
 	if envName, ok := field.Tag.Lookup("env"); ok {
 		o.envName = envName
